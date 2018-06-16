@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?language javascript?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import java.net.URL?>
+
+<GridPane fx:controller="com.alex.home.controller.SampleController" styleClass="root"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+
+    <Text text="Welcome" id="welcome-text"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          GridPane.columnSpan="2"/>
+
+    <Label text="User Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+
+    <TextField GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+    <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button text="Sign In" onAction="#handleSubmitButtonAction"/>
+    </HBox>
+    <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+        <Button text="Scripting In" onAction="handleSubmitButtonJs(event);"/>
+    </HBox>
+    <fx:script>
+        function handleSubmitButtonJs() {
+            actionTarget.setText("Action handler from JS");
+        }
+    </fx:script>
+
+    <Text fx:id="actionTarget" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+
+    <stylesheets>
+        <URL value="@css/main.css" />
+    </stylesheets>
+</GridPane>

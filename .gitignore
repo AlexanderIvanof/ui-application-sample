@@ -1,0 +1,7 @@
+# Build tools
+**/target
+**/build
+
+# IDE specific rules
+**/*.iml
+**/.idea
